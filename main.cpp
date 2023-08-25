@@ -24,6 +24,7 @@ double dTakeRandom(void) {
 int main() {
     vector<shared_ptr<Curve>> vpCurves;
 
+    // fill up the vpCurves vector with random objects and random parameters
     srand(unsigned(time(0)));
     for (int i = 0; i < 10; i++) {
         int iCurveType = rand() % 3;
@@ -41,6 +42,7 @@ int main() {
             );
     }
 
+    // just to print out all objects in vector with their parameters
     cout << fixed << setprecision(3);
     for (const auto & pCurve : vpCurves) {
         Point3D Point = pCurve->getPoint3D(TARGET_POINT);
@@ -54,6 +56,7 @@ int main() {
               << ") }" << endl;
     }
 
+    // make new vector with circles only from vpCurves vector
     vector<shared_ptr<Circle>> vpCircles;
     for (const auto & pCurve : vpCurves) {
         if (auto pCircle = dynamic_pointer_cast<Circle>(pCurve)) {
@@ -61,6 +64,7 @@ int main() {
         }
     }
 
+    // sort circles vector
     sort(vpCircles.begin(), vpCircles.end(), [](shared_ptr<Circle> a, shared_ptr<Circle> b) {
         return a->getRadius() < b->getRadius();
     });
