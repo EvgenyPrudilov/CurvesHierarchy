@@ -21,3 +21,5 @@ make run-test
 make install-google-test
 ### compile library:
 make libcurves.so
+### clean directory up:
+make clean
