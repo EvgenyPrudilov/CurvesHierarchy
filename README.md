@@ -2,7 +2,7 @@
 A small program in C++ that implements a simple support of 3D curves hierarchy.
 
 # Overview
-The project compiles with g++.
+The project compiles with g++ -std=c++14.
 The library files are curves.cpp and curves.hpp .
 The main.cpp uses this library.
 
