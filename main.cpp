@@ -64,11 +64,10 @@ int main() {
         }
     }
 
-    // sort circles vector
+    // sort circles vector by radius and find out total sum of radii
     sort(vpCircles.begin(), vpCircles.end(), [](shared_ptr<Circle> a, shared_ptr<Circle> b) {
         return a->getRadius() < b->getRadius();
     });
-
     double dTotalRadiusSum = 0;
     for (const auto & pCircle : vpCircles)
         dTotalRadiusSum += pCircle->getRadius();
