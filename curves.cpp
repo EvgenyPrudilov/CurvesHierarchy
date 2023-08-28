@@ -9,6 +9,7 @@ Point3D::Point3D(double dX, double dY, double dZ) :
 Vector3D::Vector3D(double dX, double dY, double dZ) : 
     Point3D(dX, dY, dZ) {}
 
+/* A positive value must be passed to the function: it is checked and negated if any negarive */
 Circle::Circle(double dRadius) : dRadius(dRadius) {
     if (dRadius < 0)
         this->dRadius = -dRadius;
@@ -26,6 +27,7 @@ double Circle::getRadius() {
     return dRadius;
 }
 
+/* A positive values must be passed to the function: they are checked and negated if any negarive */
 Ellipse::Ellipse(double dRadiusX, double dRadiusY) : dRadiusX(dRadiusX), dRadiusY(dRadiusY) {
     if (dRadiusX < 0)
         this->dRadiusX = -dRadiusX;
@@ -41,6 +43,7 @@ Vector3D Ellipse::getDerivative(double t) {
     return Vector3D(-dRadiusX * sin(t), dRadiusY * cos(t), 0);
 }
 
+/* A positive value must be passed to the function: it is checked and negated if any negarive */
 Helix::Helix(double dRadius, double dStep) : dRadius(dRadius), dStep(dStep) {
     if (dRadius < 0)
         this->dRadius = -dRadius;
