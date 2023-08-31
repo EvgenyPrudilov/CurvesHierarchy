@@ -15,15 +15,15 @@ Circle::Circle(double dRadius) : dRadius(dRadius) {
         this->dRadius = -dRadius;
 }
 
-Point3D Circle::getPoint3D(double t) {
+Point3D Circle::getPoint3D(double t) const {
     return Point3D(dRadius * cos(t), dRadius * sin(t), 0);
 }
 
-Vector3D Circle::getDerivative(double t) {
+Vector3D Circle::getDerivative(double t) const {
     return Vector3D(-dRadius * sin(t), dRadius * cos(t), 0);
 }
 
-double Circle::getRadius() {
+double Circle::getRadius() const {
     return dRadius;
 }
 
@@ -35,11 +35,11 @@ Ellipse::Ellipse(double dRadiusX, double dRadiusY) : dRadiusX(dRadiusX), dRadius
         this->dRadiusY = -dRadiusY;
 }
 
-Point3D Ellipse::getPoint3D(double t) {
+Point3D Ellipse::getPoint3D(double t) const {
     return Point3D(dRadiusX * cos(t), dRadiusY * sin(t), 0);
 }
 
-Vector3D Ellipse::getDerivative(double t) {
+Vector3D Ellipse::getDerivative(double t) const {
     return Vector3D(-dRadiusX * sin(t), dRadiusY * cos(t), 0);
 }
 
@@ -49,22 +49,22 @@ Helix::Helix(double dRadius, double dStep) : dRadius(dRadius), dStep(dStep) {
         this->dRadius = -dRadius;
 }
 
-Point3D Helix::getPoint3D(double t) {
+Point3D Helix::getPoint3D(double t) const {
     return Point3D(dRadius * cos(t), dRadius * sin(t), dStep * t / (2 * M_PI));
 }
 
-Vector3D Helix::getDerivative(double t) {
+Vector3D Helix::getDerivative(double t) const {
     return Vector3D(-dRadius * sin(t), dRadius * cos(t), dStep / (2 * M_PI));
 }
 
-const char * Circle::getName(void)  {
+const char * Circle::getName(void) const  {
     return "Circle";
 }
 
-const char * Ellipse::getName(void)  {
+const char * Ellipse::getName(void) const  {
     return "Ellipse";
 }
 
-const char * Helix::getName(void)  {
+const char * Helix::getName(void) const  {
     return "Helix";
 }

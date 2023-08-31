@@ -16,9 +16,9 @@ class Vector3D : public Point3D {
 
 class Curve {
     public:
-        virtual const char * getName(void) = 0;       
-        virtual Point3D getPoint3D(double t) = 0;
-        virtual Vector3D getDerivative(double t) = 0;
+        virtual const char * getName(void) const = 0;       
+        virtual Point3D getPoint3D(double t) const = 0;
+        virtual Vector3D getDerivative(double t) const = 0;
 };
 
 class Circle : public Curve {
@@ -27,10 +27,10 @@ class Circle : public Curve {
 
     public:
         Circle(double dRadius);
-        const char * getName(void) override;
-        Point3D getPoint3D(double t) override;
-        Vector3D getDerivative(double t) override;
-        double getRadius();
+        const char * getName(void) const override;
+        Point3D getPoint3D(double t) const override;
+        Vector3D getDerivative(double t) const override;
+        double getRadius() const;
 };
 
 class Ellipse : public Curve {
@@ -39,9 +39,9 @@ class Ellipse : public Curve {
 
     public:
         Ellipse(double dRadiusX, double dRadiusY);
-        const char * getName(void) override;
-        Point3D getPoint3D(double t) override;
-        Vector3D getDerivative(double t) override;
+        const char * getName(void) const override;
+        Point3D getPoint3D(double t) const override;
+        Vector3D getDerivative(double t) const override;
 };
 
 class Helix : public Curve {
@@ -50,9 +50,9 @@ class Helix : public Curve {
 
     public:
         Helix(double dRadius, double dStep);
-        const char * getName(void) override;
-        Point3D getPoint3D(double t) override;
-        Vector3D getDerivative(double t) override;
+        const char * getName(void) const override;
+        Point3D getPoint3D(double t) const override;
+        Vector3D getDerivative(double t) const override;
 };
 
 #endif
